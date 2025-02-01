@@ -12,14 +12,14 @@ import java.util.List;
 
 public class ErrorResponse {
     private List<String> messages;
-    int errorsNumber;
+    private int errorsNumber;
     private LocalDateTime timestamp;
 
 
 
-    public ErrorResponse(List<String> messages, int errorsNumber) {
+    public ErrorResponse(List<String> messages) {
         this.messages = messages;
-        this.errorsNumber = errorsNumber;
+        this.errorsNumber = messages.size();
         this.timestamp = LocalDateTime.now();
     }
     public String getTimestamp(){
