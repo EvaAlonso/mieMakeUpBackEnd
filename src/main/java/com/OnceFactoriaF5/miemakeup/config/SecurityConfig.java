@@ -1,14 +1,17 @@
-package com.OnceFactoriaF5.miemakeup.config;
+//package com.OnceFactoriaF5.miemakeup.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.http.HttpMethod;
 
-@Configuration
-public class SecurityConfig {
+
+
+//@Configuration
+//@EnableWebSecurity
+/*public class SecurityConfig {
+
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-}
+}*/

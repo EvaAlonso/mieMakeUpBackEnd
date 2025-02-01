@@ -14,11 +14,14 @@ public class ProductMapper {
         );
     }
     public static ProductDTOResponse entityToDto(Product product){
+        String categoryName = (product.getCategory() != null) ? product.getCategory().getName() : "No Category";
         return new ProductDTOResponse(
                 product.getName(),
                 product.getPrice(),
                 product.getImageUrl(),
-                product.isFeatured()
+                product.isFeatured(),
+                categoryName
+
         );
     }
 }

@@ -3,7 +3,8 @@ package com.OnceFactoriaF5.miemakeup.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-import lombok.Getter;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -21,10 +22,19 @@ public class Consumer {
     @Column(nullable = false)
     private Role role;
 
-    public Consumer(String name, String encodedPassword, Role role) {
+    @ManyToMany(mappedBy = "consumers")
+    private List<Product> products;
+
+    public Consumer(String name, String password, Role role) {
+        this.name = name;
+        this.password = password;
+        this.role = role;
     }
 
     public enum Role{
         ADMIN, CLIENT;
+    }
+
+    public Consumer() {
     }
 }

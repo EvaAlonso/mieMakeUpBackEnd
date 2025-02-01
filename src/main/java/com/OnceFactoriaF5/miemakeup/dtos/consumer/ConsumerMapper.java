@@ -8,4 +8,5 @@ import org.mapstruct.factory.Mappers;
 public interface ConsumerMapper {
     ConsumerMapper INSTANCE = Mappers.getMapper(ConsumerMapper.class);
     ConsumerDTOResponse consumerToConsumerDTOResponse(Consumer consumer);
+    Consumer consumerDTORequestToConsumer(ConsumerDTORequest consumerDTORequest);
 }

@@ -4,6 +4,7 @@ public record ProductDTOResponse(
         String name,
         double price,
         String imageUrl,
-        boolean featured
+        boolean featured,
+        String categoryName
 ) {
 }
