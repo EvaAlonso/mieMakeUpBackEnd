@@ -20,7 +20,11 @@ public class Product {
     private boolean featured;
     private String description;
     private String ingredients;
-    //category
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Category category;
+
     //rating
     //reviewCount
 
