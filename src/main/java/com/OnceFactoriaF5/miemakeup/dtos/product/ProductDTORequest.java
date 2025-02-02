@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 import org.hibernate.validator.constraints.URL;
 
 public record ProductDTORequest(
+
         @NotBlank(message = "Product name is required")
         @Size(min = 1, max = 20, message = "Product name must be at least 1 characters and max 20 characters.")
         String name,
