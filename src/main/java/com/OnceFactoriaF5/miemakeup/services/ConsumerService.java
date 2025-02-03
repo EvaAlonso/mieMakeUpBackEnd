@@ -34,11 +34,11 @@ public class ConsumerService {
         return matcher.matches();
     }*/
 
-//    public String encodePassword(String password) {
-//        return passwordEncoder.encode(password);
-//    }
+   /*public String encodePassword(String password) {
+        return passwordEncoder.encode(password);
+    }
 
-   /* public ConsumerDTOResponse authenticateAdmin(String name, String password) {
+    public ConsumerDTOResponse authenticateAdmin(String name, String password) {
         List<String> allowedAdmins = List.of("admin1", "admin2");
 
         if (!isPasswordValid(password)) {
@@ -60,7 +60,7 @@ public class ConsumerService {
     }*/
 
     public ConsumerDTOResponse saveConsumer(ConsumerDTORequest consumerDTORequest) {
-        /*if (!isPasswordValid(consumerDTORequest.password())) {
+       /* if (!isPasswordValid(consumerDTORequest.password())) {
             throw new UnauthorizedException("Password does not meet the required criteria.");
         }*/
 

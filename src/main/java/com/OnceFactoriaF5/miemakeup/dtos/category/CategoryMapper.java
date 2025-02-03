@@ -7,6 +7,6 @@ public class CategoryMapper {
         return new Category(categoryDTORequest.name());
     }
     public static CategoryDTOResponse entityToDto(Category category){
-        return new CategoryDTOResponse(category.getId(), category.getName());
+        return new CategoryDTOResponse(category.getId(), category.getName(), category.getProducts());
     }
 }
