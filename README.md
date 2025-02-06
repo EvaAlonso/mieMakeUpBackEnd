@@ -1,4 +1,22 @@
 ﻿# mieMakeUpBackEnd
+Installation Guide
+Step 1 - Setting up the project (ZIP)
+
+        Go to the green button that says "CODE" and donwload the .ZIP file.
+
+Step 1 - Setting up (Git Clone)
+
+        Go to the green button that says "CODE" and copy the HTTPS line.
+        Open Terminal (Win+R and type "cmd") and write "git clone (repository-url)", where in "repository-url" you will paste the HTTPS line.
+
+Step 2 - Terminal Codes
+
+        Open in IntelliJ IDEA  and type the following commands: > "pnpm install" (this installs necessary files for the project to run properly)  > "Ctrl + Mayus + F10" or run the proyect
+
+        Once you've followed this steps correctly, open the link that the last command gave you, and you should see the project running.
+
+Testing CRUD at Postman
+ 
 ![CreateClient](https://github.com/user-attachments/assets/7925fef8-2fd3-44ed-8359-69d8c834bd11)
 ![ReadProducts](https://github.com/user-attachments/assets/cd1e47d4-0d74-43fb-93b9-6a603cb4c38b)
 ![ReadByIdProducts](https://github.com/user-attachments/assets/9a8807e6-edcf-4745-8b19-7b572d767c7c)
