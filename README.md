@@ -15,7 +15,7 @@ Step 2 - Terminal Codes
 
         Once you've followed this steps correctly, open the link that the last command gave you, and you should see the project running.
 
-Testing CRUD at Postman
+Testing CRUD with Postman
  
 ![CreateClient](https://github.com/user-attachments/assets/7925fef8-2fd3-44ed-8359-69d8c834bd11)
 ![ReadProducts](https://github.com/user-attachments/assets/cd1e47d4-0d74-43fb-93b9-6a603cb4c38b)
