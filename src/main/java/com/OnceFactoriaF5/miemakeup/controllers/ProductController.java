@@ -47,4 +47,16 @@ public class ProductController {
         DeleteProductDTOResponse response = productService.deleteProduct(id);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+    @GetMapping("/filter")
+    public ResponseEntity<List<ProductDTOResponse>> getProductsByCategory(@RequestParam String categoryName){
+        List<ProductDTOResponse> products = productService.getProductsByCategory(categoryName);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+    @GetMapping("/filter/price")
+    public ResponseEntity<List<ProductDTOResponse>> getProductsByPriceRange(
+            @RequestParam double minPrice,
+            @RequestParam double maxPrice) {
+        List<ProductDTOResponse> products = productService.getProductsByPriceRange(minPrice, maxPrice);
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
 }

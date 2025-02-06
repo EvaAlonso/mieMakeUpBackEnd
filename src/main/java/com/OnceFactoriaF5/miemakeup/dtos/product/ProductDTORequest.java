@@ -19,9 +19,9 @@ public record ProductDTORequest(
         @NotNull
         boolean featured,
         @NotBlank(message = "Product description is required")
-        @Size(min = 10, max = 200, message = "Product description must be at least 10 characters and max 200 characters.")
+        @Size(min = 5, max = 200, message = "Product description must be at least 5 characters and max 200 characters.")
         String description,
         @NotBlank(message = "Product ingredients are required")
-        @Size(min = 50, max = 500, message = "Product ingredients must be at least 50 characters and max 500 characters.")
+        @Size(min = 5, max = 500, message = "Product ingredients must be at least 5 characters and max 500 characters.")
         String ingredients) {
 }

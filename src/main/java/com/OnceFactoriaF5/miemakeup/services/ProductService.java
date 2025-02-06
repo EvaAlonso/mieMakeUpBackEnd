@@ -5,17 +5,22 @@ import com.OnceFactoriaF5.miemakeup.dtos.product.ProductDTORequest;
 import com.OnceFactoriaF5.miemakeup.dtos.product.ProductDTOResponse;
 import com.OnceFactoriaF5.miemakeup.dtos.product.ProductMapper;
 import com.OnceFactoriaF5.miemakeup.exceptions.EmptyException;
+import com.OnceFactoriaF5.miemakeup.models.Category;
 import com.OnceFactoriaF5.miemakeup.models.Product;
+import com.OnceFactoriaF5.miemakeup.repositories.CategoryRepository;
 import com.OnceFactoriaF5.miemakeup.repositories.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class ProductService {
     private final ProductRepository productRepository;
-    public ProductService(ProductRepository productRepository) {
+    private final CategoryRepository categoryRepository;
+    public ProductService(ProductRepository productRepository, CategoryRepository categoryRepository) {
         this.productRepository = productRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     public ProductDTOResponse saveProduct(ProductDTORequest productDTORequest){
@@ -56,4 +61,22 @@ public class ProductService {
         String message = "Product " + existingProduct.getName() + " has been successfully deleted.";
         return new DeleteProductDTOResponse(productDTOResponse, message);
     }
+    public List<ProductDTOResponse> getProductsByCategory (String categoryName){
+        Category category = categoryRepository.findByName(categoryName)
+                .orElseThrow(() -> new EmptyException("Category not found"));
+
+        List<Product> productsByCategory = productRepository.findByCategory(category);
+
+        return productsByCategory.stream()
+                .map(ProductMapper::entityToDto)
+                .toList();
+    }
+
+    public List<ProductDTOResponse> getProductsByPriceRange(double minPrice, double maxPrice) {
+
+        List<Product> productsByPrice = productRepository.findByPriceBetween(minPrice, maxPrice);
+        return productsByPrice.stream()
+                .map(ProductMapper::entityToDto).toList();
+    }
+
 }
